@@ -1,28 +1,23 @@
-type Block @entity {
-  id: ID! # The block hash
-  height: BigInt!
-}
-
-type TransferEvent @entity {
+type Auction @entity {
   id: ID!
   blockHeight: BigInt!
   txHash: String!
-  sender: String
-  recipient: String!
-  amount: String!
+  collectionID: String @index
+  tokenID: String @index
+  seller: String @index
+  buyer: String
+  denom: String
+  amount: String
+  type: String
 }
 
-type Transaction @entity {
-  id: ID!
-  blockHeight: BigInt!
-  timestamp: String!
-}
-
-type Message @entity {
+type Sale @entity {
   id: ID!
   blockHeight: BigInt!
   txHash: String!
-  contract: String!
-  sender: String!
-  executeMsg: String!
+  collectionID: String @index
+  tokenID: String @index
+  buyer: String
+  denom: String
+  amount: String
 }
