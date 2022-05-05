@@ -1,23 +1,23 @@
-specVersion: 0.3.0
-name: talis-marketplace
+specVersion: 1.0.0
+name: talis-notifications
 version: 0.0.1
 runner:
   node:
-    name: "@subql/node-terra"
-    version: "*"
+    name: '@subql/node-terra'
+    version: '*'
   query:
-    name: "@subql/query"
-    version: "*"
+    name: '@subql/query'
+    version: '*'
 description: >-
   This project can be use as a starting point for developing your Terra based
   SubQuery project
-repository: "https://github.com/subquery/terra-subql-starter"
+repository: 'https://github.com/subquery/terra-subql-starter'
 schema:
   file: ./schema.graphql
 network:
   chainId: columbus-5
-  endpoint: "https://lcd.terra.dev"
-  dictionary: "https://api.subquery.network/sq/subquery/terra-columbus-5-dictionary"
+  endpoint: 'https://lcd.terra.dev'
+  dictionary: 'https://api.subquery.network/sq/subquery/terra-columbus-5-dictionary'
 dataSources:
   - kind: terra/Runtime
     startBlock: 7510978
@@ -27,12 +27,12 @@ dataSources:
         - handler: handleAuctionMessage
           kind: terra/MessageHandler
           filter:
-            type: "/terra.wasm.v1beta1.MsgExecuteContract"
+            type: /terra.wasm.v1beta1.MsgExecuteContract
             values:
-              contract: "terra19wka0vfl493ajupk6dm0g8hsa0nfls0m4vq7zw"
+              contract: terra19wka0vfl493ajupk6dm0g8hsa0nfls0m4vq7zw
         - handler: handleSaleMessage
           kind: terra/MessageHandler
           filter:
-            type: "/terra.wasm.v1beta1.MsgExecuteContract"
+            type: /terra.wasm.v1beta1.MsgExecuteContract
             values:
-              contract: "terra1chkva5f8eqs5resr36ffu0nn3tm6mewwy2ph6y"
+              contract: terra1chkva5f8eqs5resr36ffu0nn3tm6mewwy2ph6y
