@@ -16,8 +16,9 @@ schema:
   file: ./schema.graphql
 network:
   chainId: columbus-5
-  endpoint: 'https://lcd.terra.dev'
-  dictionary: 'https://api.subquery.network/sq/subquery/terra-columbus-5-dictionary'
+  endpoint: https://terra-columbus-5.beta.api.onfinality.io
+  dictionary: https://api.subquery.network/sq/subquery/terra-columbus-5-dictionary
+  mantlemint: https://mantlemint.terra-columbus-5.beta.api.onfinality.io:1320
 dataSources:
   - kind: terra/Runtime
     startBlock: 7510978
